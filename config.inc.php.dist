@@ -1,0 +1,5 @@
+<?php
+
+// Force infinite scroll for message list
+$rcmail_config['use_infinite_scroll'] = false;
+
