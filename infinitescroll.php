@@ -72,7 +72,7 @@ class infinitescroll extends rcube_plugin {
     // Check that configuration is not disabled
     $dont_override = ( array ) $this->rc->config->get('dont_override', array());
 
-    $key = 'melanie2_use_infinite_scroll';
+    $key = 'pref_use_infinite_scroll';
     if (! in_array($key, $dont_override)) {
       $config_key = 'use_infinite_scroll';
       $field_id = "_" . $key;
@@ -96,7 +96,7 @@ class infinitescroll extends rcube_plugin {
     // Check that configuration is not disabled
     $dont_override = ( array ) $this->rc->config->get('dont_override', array());
 
-    $key = 'melanie2_use_infinite_scroll';
+    $key = 'pref_use_infinite_scroll';
     if (! in_array($key, $dont_override)) {
       $config_key = 'use_infinite_scroll';
       $args['prefs'][$config_key] = rcube_utils::get_input_value('_' . $key, rcube_utils::INPUT_POST) ? true : false;
