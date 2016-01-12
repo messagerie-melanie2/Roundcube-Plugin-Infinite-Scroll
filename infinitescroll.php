@@ -29,11 +29,19 @@ class infinitescroll extends rcube_plugin {
   public $task = 'mail';
 
   /**
+   * Rcmail
+   * @var rcmail
+   */
+  private $rc;
+
+  /**
    * Infinite scroll plugin initialization
    *
    * @see rcube_plugin::init()
    */
   public function init() {
+    $this->rc = rcmail::get_instance();
+
     // Command
     $this->register_action('plugin.set_current_page', array($this,'set_current_page'));
 
