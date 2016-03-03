@@ -26,7 +26,7 @@ class infinitescroll extends rcube_plugin {
    * Task
    * @var string
    */
-  public $task = 'mail';
+  public $task = 'mail|settings';
 
   /**
    * Rcmail
