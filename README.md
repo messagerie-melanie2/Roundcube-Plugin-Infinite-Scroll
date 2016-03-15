@@ -1,14 +1,13 @@
 # Roundcube-Plugin-Infinite-Scroll
 Remove nav page for messages and support infinite scroll in the message list
 
-This version is made from others plugins (melanie2, mobile) and isn't tested yet
+This version is made from others plugins (melanie2, mobile)
 
 License
 -------
 
 This plugin is released under the GNU General Public License Version 3
 (http://www.gnu.org/licenses/gpl-3.0.html).
-
 
 Install
 -------
