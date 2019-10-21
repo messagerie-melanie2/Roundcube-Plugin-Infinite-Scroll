@@ -70,7 +70,7 @@ if (window.rcmail) {
 
 if (rcmail
     && (rcmail.env.task == 'mail' || rcmail.env.task == 'addressbook')
-    && rcube_list_widget) {
+    && typeof rcube_list_widget !== 'undefined') {
   /**
    * Rewrite the clear function of rcube_list_widget class
    * Add a triggerEvent for clear, needed by the inifinite scroll
