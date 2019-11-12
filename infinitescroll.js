@@ -21,18 +21,25 @@ if (window.rcmail) {
       // Init loaded pages
       page_loading = {};
       current_page_scroll = 1;
-      
+
       if (rcmail.env.task == 'mail' 
           && (!rcmail.env.action || rcmail.env.action == "") 
           && rcmail.env.use_infinite_scroll) {
         var scroll = false;
-        $('.pagenavbuttons').hide();
-        $('#countcontrols').hide();
-        
+
+	var ml_container = '#messagelistcontainer';
+	if(rcmail.env.skin == 'elastic') {
+	  ml_container = '#messagelist-content';
+	  $('.firstpage').closest('div').children().hide();
+	} else {
+          $('.pagenavbuttons').hide();
+          $('#countcontrols').hide();
+	}
+
         // Detect scroll on messagelist
-        $('#messagelistcontainer').scroll(function() {
-          if (($('#messagelistcontainer').scrollTop() > 1 
-              && (($('#messagelistcontainer').scrollTop() + $('#messagelistcontainer').height()) / $('#messagelist').height()) >= 0.95)
+        $(ml_container).scroll(function() {
+          if (($(ml_container).scrollTop() > 1 
+              && (($(ml_container).scrollTop() + $(ml_container).height()) / $('#messagelist').height()) >= 0.95)
               && current_page_scroll > 1) {
             // Load the next page at the bottom of the list
             var page = current_page_scroll;
